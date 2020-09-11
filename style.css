@@ -50,6 +50,8 @@ h1 {
   background: #f5f6f8;
   text-align: center;
   height: 200px;
+  padding: 1.7em 0;
+  position: relative;
 }
 
 .card__p {
@@ -65,16 +67,30 @@ h1 {
   margin-right: 5px;
 }
 
-.card::before {
+.card:before {
   content: "";
   height: 4px;
   display: block;
-  background: var(--Twitter);
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+.card.facebook::before {
+background: var(--Twitter)
+}
+.card.twitter::before {
+  background: var(--Facebook)
+}
+.card.instagram::before {
+  background-image: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%) );
+}
+.card.youtube::before {
+  background: var(--YouTube)
 }
 
 .card__title {
-  /*   border: 1px solid red;
- */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,21 +103,16 @@ h1 {
   margin-right: 5px;
 }
 
-.card__followers {
-  /*   border: 1px solid red;
- */
+.card__followers{
+  margin-bottom: 40px;
 }
 
 .card__followers--numbers {
-  /*   border: 1px solid red;
- */
   font-size: 50px;
   font-weight: 700;
 }
 
 .card__followers--title {
-  /*   border: 1px solid red;
- */
   display: block;
   color: rgb(167, 162, 162);
   letter-spacing: 5px;
